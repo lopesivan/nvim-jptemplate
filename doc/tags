@@ -1,0 +1,16 @@
+g:jpTemplateDateFormat	jptemplate.txt	/*g:jpTemplateDateFormat*
+g:jpTemplateDefaults	jptemplate.txt	/*g:jpTemplateDefaults*
+g:jpTemplateDir	jptemplate.txt	/*g:jpTemplateDir*
+g:jpTemplateKey	jptemplate.txt	/*g:jpTemplateKey*
+g:jpTemplateVerbose	jptemplate.txt	/*g:jpTemplateVerbose*
+jptemplate-bugs-and-feature-requests	jptemplate.txt	/*jptemplate-bugs-and-feature-requests*
+jptemplate-configuring-vim	jptemplate.txt	/*jptemplate-configuring-vim*
+jptemplate-contents	jptemplate.txt	/*jptemplate-contents*
+jptemplate-download	jptemplate.txt	/*jptemplate-download*
+jptemplate-features	jptemplate.txt	/*jptemplate-features*
+jptemplate-installation	jptemplate.txt	/*jptemplate-installation*
+jptemplate-introduction	jptemplate.txt	/*jptemplate-introduction*
+jptemplate-prerequisies	jptemplate.txt	/*jptemplate-prerequisies*
+jptemplate-special-variables	jptemplate.txt	/*jptemplate-special-variables*
+jptemplate-usage	jptemplate.txt	/*jptemplate-usage*
+jptemplate.txt	jptemplate.txt	/*jptemplate.txt*
