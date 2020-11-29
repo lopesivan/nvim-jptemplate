@@ -1,0 +1,105 @@
+2008-07-08	Jannis Pohlmann <jannis@xfce.org>
+
+	* jptemplate.vim: Fix version string.
+
+2008-07-08	Jannis Pohlmann <jannis@xfce.org>
+
+	* Version 1.5 released!
+	* doc/index.html: Update documentation.
+	* jptemplate.vim: Really fix the cursor placement and the way
+	  of returning to insert mode this time. Rename 
+	  jp:SetCursorPosition() to jp:UpdateCursorPosition().
+	  Add new feature: Use 'general' template dir as a fallback for
+	  template lookup for any file type. This way it's possible to
+	  also use 'general' to make templates available in all file
+	  types.
+
+2008-07-07	Jannis Pohlmann <jannis@xfce.org>
+
+	* Version 1.4 released! 
+	* jptemplate.vim, doc/index.html: Fix issues with empty
+	  shell commands and empty template result.
+
+2008-07-07	Jannis Pohlmann <jannis@xfce.org>
+
+	* jptemplate.vim: Escape &,~ and \ before calling substitute().
+
+2008-07-07	Jannis Pohlmann <jannis@xfce.org>
+
+	* jptemplate.vim: Allow $ to appear in variable names and
+	  default values. Perl and shell script people: enjoy!
+
+2008-07-04	Jannis Pohlmann <jannis@xfce.org>
+
+	* jptemplate.vim: Fix error with cnt not being defined in
+	  jp:ExpandTemplate() when the template contains nothing. Add 
+	  support for ${interactive_shell:<optional command>} variable
+	  which allows you to define which shell command to run at
+	  runtime instead of hard-coding it in the template.
+
+2008-07-04	Jannis Pohlmann <jannis@xfce.org>
+
+	* jptemplate.vim: Remember the last value of all non-special
+	  variables without a local default value. If there are two
+	  variables with the same but only the second has a local
+	  default value, remember the value for the one without 
+	  local default anyway.
+
+2008-07-04	Jannis Pohlmann <jannis@xfce.org>
+
+	* jptemplate.vim: Implement ${shell:<shell command here>} 
+	  special variable. Add support for multiline variable values 
+	  as required for this variable. Move template insertion code
+	  into jp:ExpandTemplate().
+
+2008-07-01	Jannis Pohlmann <jannis@xfce.org>
+
+	* doc/index.html: Change page title.
+
+2008-07-01	Jannis Pohlmann <jannis@xfce.org>
+
+	* Version 1.3 released!
+	* doc/index.html: Update documentation.
+	* jptemplate.vim: Fix case sensitivity issues and problems with
+	  variables appearing multiple times: Variables are now clearly
+	  case sensitive. Multiple occurances like '${x:i} ${x}' yield
+	  'i i', multiple occurences of variables with a global 
+	  default 'j' like '${x} ${x:i}' end up as 'i i'. Multiple 
+	  occurences of variables with one or more local defaults, like
+	  '${x:i} ${x:j} ...' yield an input with 'i' as default value.
+
+
+2008-07-01	Jannis Pohlmann <jannis@xfce.org>
+
+	* Version 1.2 released!
+	* doc/index.html: Update documentation.
+	* jptemplate.vim: Use list for the default configuration
+	  variables. Add g:jpTemplateDateFormat for the default date
+	  format used for ${date} fields, g:jpTemplateDefaults for
+	  a list of default values for custom fields, like ${author}.
+	  This way you don't have to type ${author:My name here} all 
+	  all the time. Also add g:jpTemplateVerbose for enabling more
+	  verbose output. 
+	  Add jp:ParseExpression() to extract name and value from 
+	  ${...} expressions. Add jp:EvaluateReservedVariable() for 
+	  determining values of special variables like ${date}. More 
+	  special variables will follow.
+	  Rework jp:ProcessTemplate() in various ways: Implement 
+	  support for special variables like ${date} with and without
+	  parameters (like ${date:insert format string here}). 
+
+2008-06-30	Jannis Pohlmann <jannis@xfce.org>
+
+	* TODO: TODO file added.
+
+2008-06-30	Jannis Pohlmann <jannis@xfce.org>
+
+	* jptemplate.vim: Add jp:Initialize() and make the 
+	  configuration more flexible by using a dict for the default
+	  configuration. Prepare support for more reserved variables.
+
+2008-06-30	Jannis Pohlmann <jannis@xfce.org>
+
+	* Initial import into my git repository.
+
+vim:set sw=8 sts=8 ts=8 noexpandtab:
