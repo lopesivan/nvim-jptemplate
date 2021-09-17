@@ -319,7 +319,7 @@ function! s:ProcessTemplate (info, template)
 endfunction
 
 
-function! InsertTemplate ()
+function! JptemplateExpandSnippet ()
 
   try
     " Detect bounds of the template name as well as the name itself
@@ -344,4 +344,4 @@ call s:Initialize ()
 " Map keyboard shortcut to the template system
 " exec 'imap ' . g:jpTemplateKey . ' <c-o>:call InsertTemplate()<CR>'
 " altGr+a
-imap æ <c-o>:call InsertTemplate()<CR>
+imap æ <c-o>:call JptemplateExpandSnippet()<CR>
