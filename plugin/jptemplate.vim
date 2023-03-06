@@ -14,7 +14,7 @@ function! s:Initialize ()
   let defaults = []
 
   " Default configuration values
-  call add (defaults, ['g:jpTemplateDir', expand('$HOME').'/.config/nvim/jptemplate'])
+  call add (defaults, ['g:jpTemplateDir', expand('$NVIM_BEGINNER').'/nvim/jptemplate'])
   call add (defaults, ['g:jpTemplateKey', '<C-Tab>'])
   call add (defaults, ['g:jpTemplateDateFormat', '%Y-%m-%d'])
   call add (defaults, ['g:jpTemplateDefaults', {}])
