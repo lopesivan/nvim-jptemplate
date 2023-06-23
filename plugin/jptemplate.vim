@@ -14,7 +14,7 @@ function! s:Initialize ()
   let defaults = []
 
   " Default configuration values
-  call add (defaults, ['g:jpTemplateDir', expand('$NVIM_BEGINNER').'/nvim/jptemplate'])
+  call add (defaults, ['g:jpTemplateDir', expand('$NDE_APP_CONFIG').'/jptemplate'])
   call add (defaults, ['g:jpTemplateKey', '<C-Tab>'])
   call add (defaults, ['g:jpTemplateDateFormat', '%Y-%m-%d'])
   call add (defaults, ['g:jpTemplateDefaults', {}])
@@ -344,4 +344,4 @@ call s:Initialize ()
 " Map keyboard shortcut to the template system
 " exec 'imap ' . g:jpTemplateKey . ' <c-o>:call InsertTemplate()<CR>'
 " altGr+a
-imap æ <c-o>:call JptemplateExpandSnippet()<CR>
+imap · <c-o>:call JptemplateExpandSnippet()<CR>
