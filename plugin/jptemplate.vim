@@ -229,9 +229,9 @@ function! s:ProcessTemplate (info, template)
 
   " Detect all variable names of the template
   while 1
-    " Find next variable start and end position
-    let start = match    (s:str, '${[^{}]\+}', matchpos)
-    let end   = matchend (s:str, '${[^{}]\+}', matchpos)
+    " Find next variable start and end position (ignora ${...} escapado com \)
+    let start = match    (s:str, '\\\@<!${[^{}]\+}', matchpos)
+    let end   = matchend (s:str, '\\\@<!${[^{}]\+}', matchpos)
 
     if start < 0
       " Stop search if there is no variable left
@@ -298,16 +298,19 @@ function! s:ProcessTemplate (info, template)
   for index in range (len (a:template))
     for expr in expressions
       let [name, value] = s:ParseExpression (expr)
-      let expr = '${' . name . '\(:[^{}]\+\)\?}'
+      let expr = '\\\@<!${' . name . '\(:[^{}]\+\)\?}'
       let value = escape(variables[name], s:escapeCharacters)
       let a:template[index] = substitute (a:template[index], expr, value, 'g')
     endfor
 
     for [expr, value] in items (reserved)
-      let expr = '${' . expr . '}'
+      let expr = '\\\@<!${' . expr . '}'
       let value = escape(value, s:escapeCharacters)
       let a:template[index] = substitute (a:template[index], expr, value, 'g')
     endfor
+
+    " Remove o \ de escape, deixando ${...} literal onde não foi expandido
+    let a:template[index] = substitute (a:template[index], '\\\(${\)', '\1', 'g')
   endfor
 
   " Insert template into the code line by line
